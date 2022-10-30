@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+import django.core.mail.backends.console
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -37,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #third part
+    'crispy_forms',
     ##local
     'accounts',
     'pages'
@@ -127,3 +131,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'accounts.CustomUser'
 LOGIN_REDIRECT_URL ='home'
 LOGOUT_REDIRECT_URL = 'home'
+#######crispy form
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+#Emailconfig
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
