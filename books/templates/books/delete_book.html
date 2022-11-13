@@ -1,0 +1,18 @@
+
+{% extends '_base.html' %}
+
+{% block page_title %}كتاب جديد{% endblock page_title %}
+
+
+{% block content %}
+
+    <form action="" method="post">
+    {% csrf_token %}
+        <h1>{{ book.title }} حزف</h1>
+        <p>{{ book.title }}ايا مطمىنى از باك كردن</p>
+{#    {{ form.as_p }}#}
+    <button class="btn btn-success" type="submit">حدف</button>
+    </form>
+
+{#   <a href="{% url 'book_list' %}">ليست همة اى كتابها</a>#}
+{% endblock content %}

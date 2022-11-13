@@ -1,0 +1,13 @@
+{% extends '_base.html' %}
+
+{% block page_title %}page title {% endblock page_title %}
+
+
+{% block content %}
+    {% for book in books %}
+     <a href="{{ book.get_absolute_url }}"><h1>{{ book.title|capfirst }}</h1><br>
+        <P>{{ book.description|truncatewords:14|capfirst }}</P>
+{#        <p>{{ book.author}}</p>#}
+    {% endfor %}
+   <a href="{% url 'new_book' %}"> ايجاد كتاب جديد</a>
+{% endblock content %}
