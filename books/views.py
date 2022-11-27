@@ -14,7 +14,7 @@ class BookDetailView(generic.DetailView):
 
 class CreatNewBookView(generic.CreateView):
     model = Book
-    fields = ['title', 'author', 'description', 'price']
+    fields = ['title', 'author', 'description', 'price', 'cover']
     template_name = 'books/create_newbook.html'
     # form_class = UserCreationForm
     # context_object_name = 'books'
@@ -22,7 +22,7 @@ class CreatNewBookView(generic.CreateView):
 
 class UpdateBookView(generic.UpdateView):
     model = Book
-    fields = ['title', 'author', 'description', 'price']
+    fields = ['title', 'author', 'description', 'price', 'cover']
     template_name = 'books/update_book.html'
 
 class DeleteBooViews(generic.DeleteView):
